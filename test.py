@@ -1,3 +1,4 @@
+# Retrieve Doc Entry URL
 def generateDocsURL(file_path):
   url = "https://www.codecademy.com/resources/docs/"
   path_parts = file_path.split("/")
@@ -7,6 +8,7 @@ def generateDocsURL(file_path):
   path_parts = "/".join(path_parts)
   print (url + path_parts)
 
+# Retrieve PR URL
 def generatePrURL(number):
   url = "https://github.com/Codecademy/docs/pull/"
   print (url + str(number))
