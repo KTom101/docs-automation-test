@@ -6,6 +6,7 @@ def generateDocsURL(file_path):
   for part in path_parts:
     if part == "concepts" or part == "content" or part == "terms" or part.endswith(".md"):
       path_parts.remove(part)
+  # end cases
   path_parts = "/".join(path_parts)
   print (url + path_parts)
 
