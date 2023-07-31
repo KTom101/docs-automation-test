@@ -16,3 +16,4 @@ def generateDocsURL(file_path):
 def generatePrURL(number):
   url = "https://github.com/Codecademy/docs/pull/"
   print (url + str(number))
+

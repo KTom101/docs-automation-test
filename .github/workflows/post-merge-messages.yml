@@ -14,9 +14,12 @@ jobs:
       issues: write
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Get Changed Files
+        uses: actions/checkout@v3
+        env:
+          CHANGED_FILES: ${{ github.event.pull_request.changed_files.outputs.all_changed_files }}
       - run: |
-          echo "some bash code"
+          echo "$CHANGED_FILES"
 
       - name: Post Message 
         uses: wow-actions/auto-comment@v1
