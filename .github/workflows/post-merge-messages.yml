@@ -17,9 +17,9 @@ jobs:
       - name: Get Changed Files
         id: changed_files
         uses: actions/checkout@v3
-        env:
-          CHANGED_FILES: ${{ github.event.pull_request.changed_files.outputs.all_changed_files }}
-      - run: |
+      - name: Print Changed Files
+        run: |
+          CHANGED_FILES="${{ steps.changed_files.outputs.all_changed_files }}"
           echo "$CHANGED_FILES"
 
       - name: Post Message 
