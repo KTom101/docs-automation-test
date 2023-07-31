@@ -1,6 +1,6 @@
 name: Post-Merge Messages
 on:
-  pull_request_target:
+  pull_request:
     types: [synchronize, closed]
   issues:
     types: [closed]
@@ -8,14 +8,15 @@ on:
 jobs:
   run:
     runs-on: ubuntu-latest
-    steps:
-      - name: Generate
-        id: generate_urls
-        uses: actions/checkout@v2
 
-      - name: Get list of changed files
-        id: changed_files
-        run: echo "::set-output name=files::$(git diff --name-only HEAD~1)"
+    permissions:
+      pull_requests: write
+      issues: write
+
+    steps:
+      - uses: actions/checkout@v3
+      - run: |
+          echo "some bash code"
 
       - name: Post Message
         uses: wow-actions/auto-comment@v1
@@ -37,6 +38,7 @@ jobs:
             Thank you for your help!
 
             🎉 Your contributions can be seen here:
+            
             
             
             Please note it may take a little while for changes to become visible.
