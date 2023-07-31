@@ -18,12 +18,6 @@ jobs:
       - run: |
           echo "some bash code"
 
-      - name: Post Message
-        uses: wow-actions/auto-comment@v1
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          changedFiles: ${{ steps.changed_files.outputs.files }}
-
       - name: Post Message 
         uses: wow-actions/auto-comment@v1
         with:
