@@ -1,29 +1,5 @@
 from test import *
 
-# query { 
-#   repository(owner: "codecademy", name: "docs") {
-#     pullRequests(states: MERGED, orderBy: {field: UPDATED_AT, direction: DESC}, first: 100) {
-#       edges {
-#         node {
-#           number
-#           title
-#           author {url}
-#           mergedAt
-#           files(first: 10) {
-#             edges {
-#               node {
-#                 path
-#                 additions
-#                 deletions
-#               }
-#             }
-#           }
-#         }
-#       }
-#     }
-#   }
-# }
-
 data = [] # Array of objects
 
 for item in data:
