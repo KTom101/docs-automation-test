@@ -1,6 +1,6 @@
 name: Post-Merge Messages
 on:
-  pull_request:
+  pull_request_target:
     types: [synchronize, closed]
   issues:
     types: [closed]
