@@ -9,10 +9,6 @@ jobs:
   run:
     runs-on: ubuntu-latest
 
-    permissions:
-      pull-requests: write
-      issues: write
-
     steps:
       - name: Get Changed Files
         id: changed_files
