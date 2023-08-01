@@ -13,12 +13,13 @@ jobs:
       - name: Get Changed Files
         id: changed_files
         uses: actions/checkout@v3
+
       - name: Print Changed Files
         run: |
           CHANGED_FILES="${{ steps.changed_files.outputs.all_changed_files }}"
           echo "Changed files: $CHANGED_FILES"
 
-      - name: Post Message 
+      - name: Post Message
         uses: wow-actions/auto-comment@v1
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -32,8 +33,8 @@ jobs:
             Thank you for your help!
 
             🎉 Your contributions can be seen here:
-            
-            ${  }
+
+            ${}
             
             Please note it may take a little while for changes to become visible.
             It looks as if you're anonymous. If you want to be credited, see [My contribution is live but I’m not being shown as a contributor, why is this?](https://discuss.codecademy.com/t/my-contribution-is-live-but-im-not-being-shown-as-a-contributor-why-is-this/758036)
