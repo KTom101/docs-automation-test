@@ -17,12 +17,13 @@ jobs:
       - name: Get Changed Files
         id: changed_files
         uses: actions/checkout@v3
+
       - name: Print Changed Files
         run: |
           CHANGED_FILES="${{ steps.changed_files.outputs.all_changed_files }}"
-          echo "$CHANGED_FILES"
+          echo "Changed files: $CHANGED_FILES"
 
-      - name: Post Message 
+      - name: Post Message
         uses: wow-actions/auto-comment@v1
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
