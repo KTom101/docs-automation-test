@@ -16,7 +16,7 @@ jobs:
 
       - name: Print Changed Files
         run: |
-          CHANGED_FILES="${{ steps.changed_files.outputs.all_changed_files }}"
+          CHANGED_FILES="${{ steps.changed_files.outputs.files }}"
           echo "Changed files: $CHANGED_FILES"
 
       - name: Post Message
