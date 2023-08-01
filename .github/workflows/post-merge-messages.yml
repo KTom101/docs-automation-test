@@ -21,8 +21,9 @@ jobs:
 
       - name: Print Changed Files
         run: |
-          CHANGED_FILES="${{ steps.changed_files.outputs.all_changed_files }}"
+          CHANGED_FILES="$(git diff --name-only ${{ github.event.pull_request.base.sha }}..${{ github.event.pull_request.head.sha }})"
           echo "Changed files: $CHANGED_FILES"
+          
 
       - name: Post Message
         uses: wow-actions/auto-comment@v1
