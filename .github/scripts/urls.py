@@ -20,7 +20,7 @@ def generatePrURL(number):
   return url + str(number)
 
 file_path = ""
-pr_number = 42
+pr_number = 0
 
 docs_url = generateDocsURL(file_path)
 pr_url = generatePrURL(pr_number)
