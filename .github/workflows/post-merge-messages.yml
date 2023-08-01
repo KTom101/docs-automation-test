@@ -14,9 +14,14 @@ jobs:
         id: changed_files
         uses: actions/checkout@v3
 
+      - name: Debug Step
+        run: |
+          echo "Current directory contents: $(ls)"
+          echo "Github workspace contents: $(ls $GITHUB_WORKSPACE)"
+
       - name: Print Changed Files
         run: |
-          CHANGED_FILES="${{ steps.changed_files.outputs.all_changed_files }}"
+          CHANGED_FILES="${{ steps.changed_files.outputs.files }}"
           echo "Changed files: $CHANGED_FILES"
 
       - name: Post Message
